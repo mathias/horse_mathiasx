@@ -3,12 +3,12 @@ require 'json'
 
 module HorseMathiasx
   class Replier
-    def new(markov)
+    def initialize(markov)
       @markov = markov
     end
 
     def got_message(json)
-      message_to_say = markov.generate
+      message_to_say = @markov.generate
 
       puts "said #{message_to_say} to slack"
 
@@ -23,7 +23,8 @@ module HorseMathiasx
       Faraday.post do |req|
         req.url uri
         req.headers['Content-Type'] = 'application/json'
-        req.body payload
+        req.body = JSON.generate(payload)
+      end
     end
   end
 end
