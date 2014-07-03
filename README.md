@@ -1,4 +1,4 @@
-# horse_markov
+# horse_mathiasx
 
 This is a Slack bot that responds with a markov chain generated from Tweets.
 
