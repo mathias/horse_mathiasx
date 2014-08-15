@@ -8,8 +8,6 @@ module HorseMathiasx
     end
 
     def got_message(json)
-      puts "got #{json}"
-
       message_to_say = @markov.generate
 
       puts "said #{message_to_say} to slack"
