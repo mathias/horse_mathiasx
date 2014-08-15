@@ -11,7 +11,7 @@ module HorseMathiasx
       @markov.parse_file(ENV['PATH_TO_TWEETS_CLEAN'])
     end
 
-    def generate
+    def generate(*p)
       @markov.generate_n_sentences(2).split(/\#\</).first.chomp.chop
     end
   end
